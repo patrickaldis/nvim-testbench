@@ -3,6 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    markview-nvim = {
+      flake = false;
+      type = "github";
+      owner = "OXY2DEV";
+      repo = "markview.nvim";
+      rev = "1861f959599ae03cfd59f56222a542035b0cd947";
+      narHash = "sha256-T6ZVy7o9sSGa2vOolvmL7KO3cXkyEwJ9F4n6BbWdPGk=";
+    };
   };
 
   outputs =
@@ -17,6 +25,11 @@
             neovim = final.wrapNeovimUnstable final.neovim-unwrapped {
 
               plugins = [
+                (final.vimUtils.buildVimPlugin {
+                  pname = "markview-nvim";
+                  version = "22-03-2026";
+                  src = inputs.markview-nvim;
+                })
               ];
 
               luaRcContent = builtins.readFile ./init.lua;

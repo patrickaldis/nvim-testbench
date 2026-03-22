@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "markview-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774017863,
+        "narHash": "sha256-T6ZVy7o9sSGa2vOolvmL7KO3cXkyEwJ9F4n6BbWdPGk=",
+        "owner": "OXY2DEV",
+        "repo": "markview.nvim",
+        "rev": "1861f959599ae03cfd59f56222a542035b0cd947",
+        "type": "github"
+      },
+      "original": {
+        "narHash": "sha256-T6ZVy7o9sSGa2vOolvmL7KO3cXkyEwJ9F4n6BbWdPGk=",
+        "owner": "OXY2DEV",
+        "repo": "markview.nvim",
+        "rev": "1861f959599ae03cfd59f56222a542035b0cd947",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1767313136,
@@ -18,6 +36,7 @@
     },
     "root": {
       "inputs": {
+        "markview-nvim": "markview-nvim",
         "nixpkgs": "nixpkgs"
       }
     }
